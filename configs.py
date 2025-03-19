@@ -10,16 +10,16 @@ def pwclonet_args():
     """
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gpu', type=int, default=1, help='GPU to use [default: GPU 3]')
+    parser.add_argument('--gpu', type=int, default=0, help='GPU to use [default: GPU 3]')
     parser.add_argument('--multi_gpu', type=str, default=None, help='The gpu [default : null]')
     parser.add_argument('--limit_or_filter', type=bool, default=True, help='if False, filter will reserve 40m~50m points')
     parser.add_argument('--batch_size', type=int, default=8, help='Batch Size during training [default: 16]')
     parser.add_argument('--eval_batch_size', type=int, default=1, help='Batch Size during evaling [default: 64]')
-    parser.add_argument('--eval_before', type=int, default=1, help='if 1, eval before train')
+    parser.add_argument('--eval_before', type=int, default=0, help='if 1, eval before train')
 
     # parser.add_argument('--data_root', default='/tmp/data_odometry_velodyne/dataset', help='Dataset directory [default: /dataset]')
-    parser.add_argument('--lidar_root', default='/dataset/data_odometry_velodyne/dataset/', help='Dataset directory [default: /dataset]')
-    parser.add_argument('--image_root', default='/dataset/data_odometry_color/sequences', help='Dataset directory [default: /dataset]')
+    parser.add_argument('--lidar_root', default='/data/SemanticKITTI/dataset/sequences', help='Dataset directory [default: /dataset]')
+    parser.add_argument('--image_root', default='/data/SemanticKITTI/dataset/sequences', help='Dataset directory [default: /dataset]')
     parser.add_argument('--log_dir', default='log_train', help='Log dir [default: log_train]')
 
     parser.add_argument('--num_points', type=int, default=150000, help='Point Number [default: 2048]')

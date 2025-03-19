@@ -15,7 +15,6 @@ import numpy as np
 from conv_util import PointNetSaModule, cost_volume, set_upconv_module, FlowPredictor, Conv1d, BasicBlock, Feature_Gather
 from pwclonet_model_utils import ProjectPCflagxy2SphericalRing, ProjectPCflag2SphericalRing,ProjectPC2SphericalRing, PreProcess, softmax_valid, quat2mat, inv_q, mul_q_point, mul_point_q
 from context_cluster import Cluster
-from cross_swin_transformer import Cross_BasicLayer
 from Fusion_module import GlobalFuser
 import numpy as np
 import matplotlib.pyplot as plt
@@ -772,5 +771,4 @@ def get_loss(l0_q, l0_t, l1_q, l1_t, l2_q, l2_t, l3_q, l3_t, qq_gt, t_gt, w_x, w
 
 
 # if __name__ == "__main__":
-
 

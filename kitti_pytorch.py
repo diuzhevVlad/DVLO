@@ -127,7 +127,7 @@ class points_dataset(data.Dataset):
         
         pose_path = 'pose/' + sequence_str_list[index_index] + '_diff.npy'
         lidar_path = os.path.join(self.lidar_path, sequence_str_list[index_index], 'velodyne')
-        image_path = os.path.join(self.image_path, sequence_str_list[index_index], 'image_2')
+        image_path = os.path.join(self.image_path, sequence_str_list[index_index], 'image_0')
         pose = np.load(pose_path)
         calib = os.path.join(self.image_path, sequence_str_list[index_index], 'calib')
 
@@ -135,8 +135,8 @@ class points_dataset(data.Dataset):
         fn2_dir = os.path.join(image_path, '{:06d}.png'.format(fn2))
         fn3_dir = os.path.join(lidar_path, '{:06d}.bin'.format(fn3))
         fn4_dir = os.path.join(image_path, '{:06d}.png'.format(fn4))
-        c1_dir = os.path.join(calib, '{:06d}.txt'.format(c1))
-        c2_dir = os.path.join(calib, '{:06d}.txt'.format(c2))
+        c1_dir = calib + ".txt"
+        c2_dir = calib + '.txt'
 
         point1 = np.fromfile(fn1_dir, dtype=np.float32).reshape(-1, 4)
         point2 = np.fromfile(fn3_dir, dtype=np.float32).reshape(-1, 4)
